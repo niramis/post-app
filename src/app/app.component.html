@@ -1,0 +1,50 @@
+<div class="container">
+
+    <button (click)="clickFunction()" class="btn btn-success">Add pizza</button>
+
+    <div>
+        <label for="pizza-name">Pizza name: </label>
+        <input id="pizza-id" [(ngModel)]="global_pizza.id" placeholder="pizza id"/>
+        <input id="pizza-name" [(ngModel)]="global_pizza.name" placeholder="pizza name"/>
+        <input id="pizza-body" [(ngModel)]="global_pizza.body" placeholder="pizza body"/>
+      </div> 
+    
+    <table class="table table-striped">
+        <thead>
+            <tr class="table-info">
+                <th scope="col">id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Body</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let result of list_of_pizza">
+                <th scope="row">{{result.id}}</th>
+                <td>{{result.name}}</td>
+                <td>{{result.body}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr class="table-info">
+                <th scope="col">#</th>
+                <th scope="col">UID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Body</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let result of data">
+                <th scope="row">{{result.id}}</th>
+                <td>{{result.userId}}</td>
+                <td>{{result.title}}</td>
+                <td>{{result.body}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
